@@ -7,14 +7,13 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../Utils/Firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utils/userSlice";
+import { BACKGROUND_IMG } from "../Utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const toggleSignInForm = () => {
@@ -26,8 +25,6 @@ const Login = () => {
   const password = useRef(null);
 
   const handleButtonClick = () => {
-    // console.log(email.current.value, password.current.value);
-
     const msg = checkValidData(email.current.value, password.current.value);
     setErrorMsg(msg);
 
@@ -47,14 +44,11 @@ const Login = () => {
           })
             .then(() => {
               const { uid, email, displayName } = auth.currentUser;
-        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+              dispatch(
+                addUser({ uid: uid, email: email, displayName: displayName })
+              );
             })
-            .catch((error) => {
-              // An error occurred
-              // ...
-            });
-          // console.log(user);
-          navigate("/Browse");
+            .catch((error) => {});
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -70,8 +64,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          // console.log(user);
-          navigate("/Browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -85,11 +77,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          className=""
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/826348c2-cdcb-42a0-bc11-a788478ba5a2/6d20b198-e7ab-4e9f-a1aa-666faa0298f9/IN-en-20240729-POP_SIGNUP_TWO_WEEKS-perspective_WEB_a67d8c9e-8121-4a74-98e4-8005eb2df227_small.jpg"
-          alt="bg-img"
-        />
+        <img className="" src={BACKGROUND_IMG} alt="bg-img" />
       </div>
 
       <div>
