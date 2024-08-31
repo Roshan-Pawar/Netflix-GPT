@@ -13,3 +13,11 @@ export const API_OPTIONS = {
 };
 
 export const MOVIE_IMG_CDN = "https://image.tmdb.org/t/p/w500/";
+
+export const SUPPORTED_LANG = [
+  { identifier: "en", name: "English" },
+  { identifier: "ma", name: "Marathi" },
+  { identifier: "hi", name: "Hindi" },
+  { identifier: "sa", name: "Sanskrit" },
+  { identifier: "es", name: "Espanol" },
+];

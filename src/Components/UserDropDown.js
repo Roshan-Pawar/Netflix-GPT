@@ -38,13 +38,13 @@ const UserDropDown = () => {
 
       <MenuItems
         transition
-        className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+        className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-900 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
       >
         <div className="py-1">
           <MenuItem>
             <a
               href="#"
-              className=" flex px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+              className=" flex px-4 py-2 text-sm text-white data-[focus]:bg-gray-800 data-[focus]:text-white"
             >
               <UserCircleIcon className="size-5 mr-1" /> Account settings
             </a>
@@ -52,7 +52,7 @@ const UserDropDown = () => {
           <MenuItem>
             <a
               href="#"
-              className="flex px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+              className="flex px-4 py-2 text-sm text-white data-[focus]:bg-gray-800 data-[focus]:text-white"
             >
               <InformationCircleIcon className="size-5 mr-1" />
               Support
@@ -61,7 +61,7 @@ const UserDropDown = () => {
           <MenuItem>
             <a
               href="#"
-              className="flex px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+              className="flex px-4 py-2 text-sm text-white data-[focus]:bg-gray-800 data-[focus]:text-white"
             >
               <NewspaperIcon className="size-5 mr-1" /> License
             </a>
@@ -71,7 +71,7 @@ const UserDropDown = () => {
             <button
               onClick={handleSignOut}
               type="submit"
-              className="flex w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+              className="flex w-full px-4 py-2 text-left text-sm text-white data-[focus]:bg-gray-800 data-[focus]:text-white"
             >
               <ArrowRightStartOnRectangleIcon className="size-5 mr-1" /> Sign
               out
