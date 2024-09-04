@@ -29,7 +29,7 @@ const Header = () => {
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [dispatch, navigate]);
 
   const handleGptSearchClick = () => {
     // Toggle GPT search button
@@ -41,14 +41,14 @@ const Header = () => {
   }
 
   return (
-    <div className="absolute z-10 w-full mt-6 flex justify-between">
+    <div className="absolute z-10 w-full mt-6 flex flex-col md:flex-row justify-between">
       <img
-        className="w-40 ml-10"
+        className="w-40 sm:ml-10 mx-auto"
         src="https://images.ctfassets.net/y2ske730sjqp/821Wg4N9hJD8vs5FBcCGg/9eaf66123397cc61be14e40174123c40/Vector__3_.svg?w=460"
         alt="logo"
       />
       {user && (
-        <div className="mr-5 flex">
+        <div className="mx-5  flex justify-between">
           {showGptSearch && <select className="px-2 my-1 mx-3 rounded-lg bg-gray-900 text-white" onChange={handleLanguageChange}>
             {SUPPORTED_LANG.map((lang) => (
               <option
